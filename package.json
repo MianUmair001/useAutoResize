@@ -1,0 +1,22 @@
+{
+  "name": "useautoresize",
+  "version": "1.0.0",
+  "description": "The Auto Resizer React Hook for Video Streaming/Conference Apps for the auto resizing the video components and adjust them according to the Parent Element and stop the inner component to get out of parent Element and stop the parent elment from overflow or scroll.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "AutoResize",
+    "VideoGrid",
+    "VideoConference",
+    "VidoeContainer",
+    "AutoResizingGrid"
+  ],
+  "author": "Muhammad Umair",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
