@@ -1,25 +1,84 @@
 # useAutoResize
 
 ## Getting Started
-
-Install the Package
-
+Install the Package 
+```
 npm i useAutoResize
-
+```
+```
 const resize = resizeComponents(document.getElementById("videoGrid")!);
 const [participants, setParticipants] = useState<Number[]>([]);
 
 useEffect(() => {
-resize();
-}, [participants, setParticipants, resize]);
-
+    resize();
+  }, [participants, setParticipants, resize]);
+```
 useAutoResizer is the custom React Hook that will take a Parent Component and will automatically resize the children elements to fit in the parent component the hook will calculate the width and height of each children and will assign it to them. In the Result the inner elements will not get outside from the parent components and will be in perfact 16:9 aspect ratio.The hook will also prevant the overflow no matter how much children elments are there resulting in redusing the size of each tiles.
 
-Participants can be anything
+Participants can be anything 
 
-Example
+Example 
 
-`<div className="App"> <h1 className="head">React Auto Resizing Video Grid By Muhammad Umair</h1> <div id="videoGrid" style={{ display: "flex", height: "82vh", flexWrap: "wrap", alignContent: "center", justifyContent: "center", background: "grey", }} > {participants.map((number, index) => ( <div id="videoElement" className="videoElement" // eslint-disable-next-line react/no-array-index-key key={index} style={{ background: "black", borderRadius: "10px", }} > <video style={{ width: "100%", height: "100%", }} controls autoPlay src={videoSrc} /> </div> ))} </div> <div className="buttons"> <button className="addButton" onClick={(e) => { // e.preventDefault(); setParticipants([...participants, 1]); }} > Add Participant </button> <button className="removeButton" onClick={(e) => { e.preventDefault(); const data = participants.splice(1); setParticipants(data); }} > Remove Participant </button> </div> </div>`
+```
+<div className="App">
+      <h1 className="head">React Auto Resizing Video Grid By Muhammad Umair</h1>
+      <div
+        id="videoGrid"
+        style={{
+          display: "flex",
+          height: "82vh",
+          flexWrap: "wrap",
+          alignContent: "center",
+          justifyContent: "center",
+          background: "grey",
+        }}
+      >
+        {participants.map((number, index) => (
+          <div
+            id="videoElement"
+            className="videoElement"
+            // eslint-disable-next-line react/no-array-index-key
+            key={index}
+            style={{
+              background: "black",
+              borderRadius: "10px",
+            }}
+          >
+            <video
+              style={{
+                width: "100%",
+                height: "100%",
+              }}
+              controls
+              autoPlay
+              src={videoSrc}
+            />
+          </div>
+        ))}
+      </div>
+      <div className="buttons">
+        <button
+          className="addButton"
+          onClick={(e) => {
+            // e.preventDefault();
+            setParticipants([...participants, 1]);
+          }}
+        >
+          Add Participant
+        </button>
+        <button
+          className="removeButton"
+          onClick={(e) => {
+            e.preventDefault();
+            const data = participants.splice(1);
+            setParticipants(data);
+          }}
+        >
+          Remove Participant
+        </button>
+      </div>
+    </div>
+```
 
 ## Available Scripts
 
@@ -60,7 +119,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Learn More
 
-Built By
+Built By 
 Name:Muhammad Umair
 Email:amianumair@gmail.com
 LinkedIn:muhammadumairakram
