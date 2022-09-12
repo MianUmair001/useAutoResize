@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-const ResizeComponents = (ContainerElement: HTMLElement) => {
+const useAutoResize = (ContainerElement: HTMLElement) => {
   const margin = 10;
   const [width, setWidth] = useState(0);
 
@@ -81,4 +81,4 @@ const ResizeComponents = (ContainerElement: HTMLElement) => {
   return resize;
 };
 
-export default ResizeComponents;
+export default useAutoResize;
