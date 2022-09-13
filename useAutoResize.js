@@ -1,27 +1,21 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 
-const useAutoResize = (ContainerElement: HTMLElement) => {
+export default function useAutoResize(ContainerElement) {
   const margin = 10;
   const [width, setWidth] = useState(0);
 
   const ratio = ratioFun();
   const [height, setHeight] = useState(0);
 
-  function resizer(width: number) {
-    // const ContainerElement = document.getElementById("visitorGrid");
+  function resizer(width) {
     for (
       let counter = 0;
       counter < ContainerElement?.children.length;
       counter += 1
     ) {
       const element = ContainerElement?.children[counter];
-      // @ts-ignore
       element.style.margin = `${margin}px`;
-      // calculate dimensions
-      // @ts-ignore
       element.style.width = `${width}px`;
-      // @ts-ignore
       element.style.height = `${width * ratio}px`;
       // to show the aspect ratio in demo (optional)
       element.setAttribute("data-aspect", "16:9");
@@ -58,12 +52,11 @@ const useAutoResize = (ContainerElement: HTMLElement) => {
   // split aspect ratio (format n:n)
   function ratioFun() {
     const ratio = "16:9".split(":");
-    // @ts-ignore
     return ratio[1] / ratio[0];
   }
 
   // calculate area of ContainerElement:
-  function areaFun(increment: number) {
+  function areaFun(increment) {
     let i = 0;
     let w = 0;
     let h = increment * ratio + margin * 2;
@@ -78,7 +71,5 @@ const useAutoResize = (ContainerElement: HTMLElement) => {
     if (h > height || increment > width) return false;
     return increment;
   }
-  return resize;
-};
-
-export default useAutoResize;
+  return [resize];
+}
