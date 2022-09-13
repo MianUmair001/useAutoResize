@@ -6,7 +6,12 @@ Install the Package
 npm i useAutoResize
 ```
 ```
-const resize = resizeComponents(document.getElementById("videoGrid")!);
+import useAutoResize from "useautoresize";
+```
+```
+
+
+const [resize] = useAutoResize(document.getElementById("videoGrid"));
 const [participants, setParticipants] = useState<Number[]>([]);
 
 useEffect(() => {
